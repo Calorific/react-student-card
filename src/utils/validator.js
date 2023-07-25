@@ -4,20 +4,20 @@ const validate = (validationMethod, data, config) => {
     case 'isRequired':
       status = !data.trim()
       break
-    case 'isEmail':
-      const emailRegexp = /^\S+@\S+\.\S+/g
-      status = !emailRegexp.test(data)
-      break
-    case 'hasCapital':
-      const capitalRegexp = /[A-Z]+/g
-      status = !capitalRegexp.test(data)
-      break
-    case 'hasDigit':
-      const digitRegexp = /\d+/g
-      status = !digitRegexp.test(data)
+    case 'minLength':
+      status = data.length < config.value
       break
     case 'min':
-      status = data.length < config.value
+      status = data < config.value
+      break
+    case 'max':
+      status = data > config.value
+      break
+    case 'isUrl':
+      const urlRegExp = /^https?:\/\/\S+\.\S+$/gmi
+      status = !data.match(urlRegExp)
+      break
+    default:
       break
   }
   if (status)

@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { Redirect, Route } from 'react-router-dom'
+import Card from './pages/card'
+import CardControl from './pages/cardControl'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+      <Route path='/' exact component={Card} />
+      <Route path='/controls' exact component={CardControl} />
+      <Redirect to='/' />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
