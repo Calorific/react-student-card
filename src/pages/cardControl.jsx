@@ -82,7 +82,6 @@ const CardControl = () => {
         <TextField onChange={handleFormChange} name="portfolio" value={formData.portfolio} label="Портфолио" error={errors.portfolio} />
 
         {isEditing ? <Link className="btn btn-secondary" to="/">Назад</Link> : ''}
-
         <Modal
           isCreating={!isEditing}
           isValid={!Object.keys(errors).length}
