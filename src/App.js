@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App container">
       <Route path='/' exact component={Card} />
-      <Route path='/controls' exact component={CardControl} />
+      <Route path='/controls/:action?' exact component={CardControl} />
       <Redirect to='/' />
     </div>
   )

@@ -32,12 +32,12 @@ const Card = () => {
           <p><b>Фамилия:</b> {cardData.surname}</p>
           <p><b>Год рождения:</b> {cardData.year} ({getAge(cardData.year)})</p>
           <p><b>Портфолио:</b> <a href={cardData.portfolio}>{cardData.portfolio}</a></p>
-          <Link className="btn btn-primary mt-2" to="/controls?edit=1">Редактировать</Link>
+          <Link className="btn btn-primary mt-2" to="/controls/edit">Редактировать</Link>
         </>
       ) : (
         <>
           <p>Нет данных</p>
-          <Link className="btn btn-primary" to="/controls?edit=0">Добавить</Link>
+          <Link className="btn btn-primary" to="/controls/add">Добавить</Link>
         </>
       )}
     </>

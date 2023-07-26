@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import TextField from '../components/textField'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useParams } from 'react-router-dom'
 import { validator } from '../utils/validator'
 import Modal from '../components/modal'
 
 const CardControl = () => {
   const history = useHistory()
-  const isEditing = +(new URLSearchParams(history.location.search)).get('edit')
+  const { action } = useParams()
+  const isEditing = action === 'edit'
 
   const [errors, setErrors] = useState({})
 
